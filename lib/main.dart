@@ -21,7 +21,6 @@ void main() async {
   database = await DatabaseService().database;
 
   // FULLSCREEN
-  // SystemChrome.setEnabledSystemUIOverlays([]);
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   runApp(const MyApp());
 }

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class NetworkOverlay {
   late OverlayEntry view;
   bool isVisible = false;
+
   void hide() {
     view.remove();
     isVisible = false;

@@ -7,6 +7,7 @@ import 'main.dart';
 class FormPage extends StatefulWidget {
   bool lottery;
   bool tournament;
+
   FormPage({
     super.key,
     required this.lottery,
