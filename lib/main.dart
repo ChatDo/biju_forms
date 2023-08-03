@@ -65,9 +65,19 @@ class _HomePageState extends State<HomePage> {
         if (request.uri.path == "/members") {
           var data = await database.query("person");
           String finalTable = "";
+          String hasColor = "";
           for (var elem in data) {
+            if (elem['lottery'] == "true" && elem['tournament'] == "true") {
+              hasColor = " bgcolor=\"blue\"";
+            } else if (elem['lottery'] == "true" && elem['tournament'] == "false") {
+              hasColor = " bgcolor=\"yellow\"";
+            } else if (elem['lottery'] == "false" && elem['tournament'] == "true") {
+              hasColor = " bgcolor=\"green\"";
+            } else {
+              hasColor = " bgcolor=\"gray\"";
+            }
             finalTable += '''
-            <tr>
+            <tr$hasColor>
             <td> ${data.isEmpty ? "Empty" : elem['name']} </td>
             <td> ${data.isEmpty ? "Empty" : elem['firstname']} </td>
             <td> ${data.isEmpty ? "Empty" : elem['email']} </td>
